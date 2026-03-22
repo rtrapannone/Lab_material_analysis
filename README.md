@@ -1,11 +1,23 @@
 # Lab_material_analysis
 
-Script for analysing purchase data from an academic scientific Institute and inferring greenhouse gas emissions of specific items.
+## Objective
+Implement targeted circular economy practices in scientific research labs based on purchased data analysis.
 
-BACKGROUND: Most of the scope 3 Greenhouse gas (GHG) emission in scientific Institutes are due to purchased items. Research labs consume a lot of chemical, single use plastic and reagents with high emission associated. By implementing circular economy practices, the environmental impact of purchased goods can be significally reduced. Which items have the highest envoronmental impact? What practices need to be prioritised to make data-driven decision making more efficient?
+## Dataset
+Database containing purchase data from scientific labs in an academic research Institute in Vienna. It contains product names, price and category. The latter had been assigned manually depending on the tyoe and/or material of the product: plastic, kits, chemical, biological reagent, etc. The data are from the reporting year 2023.
 
-GOAL: The goal of this project is to extract information from a database containing purchase data from research labs. The database contains the product name, price and category (depending on the material). GHG emission can be inferred by the price using emission factors taken from literature and associated to specific product types. Each product category (plastic, chemical, kit, biological reagent) contains hundreds of products. By finding the top purchased products in each category, precise GHG emissions and costs can be associated to them. 
+## Methods
+- Data cleanup and extraction of specific product categories
+- Ranking of top purchased products based on the money spent
+- Creation of a new file containing the ranking, where items of the same type are summed up (differences in spelling are considered)
 
-SCRIPT: The script targets a specific product category. It extracts all the items associated to the product category of interest, for example plastic and create a ranking of the top purchased products, based on the money spent. Items with the same name where pooled together. Small spelling mistakes and different capitalisation were also taken into account. The output is a file where all the purchased items where ranked, based on the expenses. The new price column contains the sum of the expenses of products with the same name, in case they were bought more than once in the reporting year. The same script was adapted to other product categories by changing one line of the code. The categories analysed were plastic, chemicals, kits and biological reagents, which are the most represented in research labs.
+## Key findings
+- GHG emissions of specific product types, obtained by multiplying the emission factors (from literature data) by the expenses
+- Wait in tons of single-use plastic product that could be potentially reused or replaced
+- Money spent on specific product types
 
-IMPACT: The output file allowed to find out which product types within each actegory were mostly purchased in the reporting year. Each product type could be associated to an emission factor taken from literature data. By knowing the expenses or the sum of the expenses, the GHG emission of the product type was calculated. This allowed the estimation of cost and emission savings by implementing tailored circular economy practices to specific highly purchased products. 
+## Impact
+- Potential GHG reduction (in CO2eq) by implementing circular economy practices on speficic product types
+- Potential cost savings (in euros) by replacing single-use items with reusable ones
+- Potential waste reduction (in tonnes)
+
